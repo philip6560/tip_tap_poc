@@ -7,11 +7,21 @@
     "ios": "react-native run-ios",
     "lint": "eslint .",
     "start": "react-native start",
-    "test": "jest"
+    "test": "jest",
+    "editor:dev": "vite --config ./src/editor-web/vite.config.ts",
+    "editor:build": "vite --config ./src/editor-web/vite.config.ts build && yarn editor:post-build",
+    "editor:post-build": "node ./node_modules/@10play/tentap-editor/scripts/buildEditor.js ./src/editor-web/build/index.html",
+    "reverse-android": "adb reverse tcp:3000 tcp:3000"
   },
   "dependencies": {
+    "@10play/tentap-editor": "^0.5.17",
+    "@mantine/core": "^7.12.1",
+    "@mantine/hooks": "^7.12.1",
+    "babel-plugin-inline-import": "^3.0.0",
     "react": "18.2.0",
-    "react-native": "0.74.5"
+    "react-dom": "^18.3.1",
+    "react-native": "0.74.5",
+    "react-native-webview": "^13.10.5"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
@@ -21,14 +31,19 @@
     "@react-native/eslint-config": "0.74.87",
     "@react-native/metro-config": "0.74.87",
     "@react-native/typescript-config": "0.74.87",
-    "@types/react": "^18.2.6",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
     "@types/react-test-renderer": "^18.0.0",
+    "@vitejs/plugin-react": "^4.3.1",
     "babel-jest": "^29.6.3",
+    "babel-plugin-module-resolver": "^5.0.2",
     "eslint": "^8.19.0",
     "jest": "^29.6.3",
     "prettier": "2.8.8",
     "react-test-renderer": "18.2.0",
-    "typescript": "5.0.4"
+    "typescript": "5.0.4",
+    "vite": "^5.4.1",
+    "vite-plugin-singlefile": "^2.0.2"
   },
   "engines": {
     "node": ">=18"
