@@ -1,6 +1,5 @@
 import {NodeViewContent, NodeViewWrapper} from '@tiptap/react';
 import React from 'react';
-import {InputsBadge} from './InputsBadge';
 import IconClear from './IconClear';
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -24,6 +23,7 @@ const ImmutableTipTapBadge = (props: any) => {
               .run();
           }
         }}
+        // eslint-disable-next-line react/forbid-component-props
         style={{
           maxWidth: '80%',
           minWidth: 'fit-content',
@@ -35,12 +35,13 @@ const ImmutableTipTapBadge = (props: any) => {
           borderRadius: '0.5rem',
           cursor: 'pointer',
           marginBottom: 6,
-          border: `1px solid #CDD8F3`,
+          border: '1px solid #CDD8F3',
           marginRight: 10,
           textTransform: 'none',
         }}>
         <span
           contentEditable={false}
+          // eslint-disable-next-line react-native/no-inline-styles
           style={{
             color: '#000',
             wordWrap: 'break-word',
@@ -54,4 +55,5 @@ const ImmutableTipTapBadge = (props: any) => {
     </NodeViewWrapper>
   );
 };
+
 export default ImmutableTipTapBadge;

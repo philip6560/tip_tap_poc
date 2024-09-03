@@ -24,8 +24,8 @@ export const Editor = () => {
   });
 
   return (
-    // eslint-disable-next-line react-native/no-inline-styles
     <SafeAreaView
+      // eslint-disable-next-line react-native/no-inline-styles
       style={{
         height: '100%',
         paddingHorizontal: 7,
